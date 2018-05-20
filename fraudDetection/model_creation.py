@@ -7,7 +7,7 @@ import os
 import json
 from collections import Counter
 
-output_file_path            = '/Users/ketankokane/Desktop/fraudDetection'
+output_file_path            = 'fraudDetection'
 trained_model_pickle_name   = 'model_v1.pk'
 
 def save_model(clf):
@@ -47,7 +47,7 @@ def evaluate_model(clf, X_test,y_test):
     return np.mean(y_pred==y_test)
     
 def train():
-    df = pd.read_csv('/Users/ketankokane/Desktop/fraudDetection/data2.csv')
+    df = pd.read_csv('data2.csv')
     drop_columns(df)
     encode_cat_data(df)
     X = df.drop('isFraud',axis=1)
